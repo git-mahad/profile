@@ -88,12 +88,11 @@ const Contact = () => {
 		}
 
 		try {
-			const response = await fetch('/api/email/contact', {
+			const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3001';
+
+			const response = await fetch(`${BACKEND_URL}/api/email/contact`, {
 				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-					'Accept': 'application/json',
-				},
+				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
 					name: formData.name.trim(),
 					email: formData.email.trim(),
@@ -143,8 +142,7 @@ const Contact = () => {
 	return (
 		<section
 			id="contact"
-			className={`min-h-screen text-white transition-all duration-300 ${
-				isMobile ? 'px-4 py-16' :
+			className={`min-h-screen text-white transition-all duration-300 ${isMobile ? 'px-4 py-16' :
 					isTablet ? 'px-6 py-16' :
 						'ml-72 p-12'
 				}`}
@@ -307,7 +305,7 @@ const Contact = () => {
 											Message sent successfully!
 										</p>
 									)}
-									
+
 									{submitStatus === 'error' && (
 										<p className="text-red-400 text-center sm:text-left w-full sm:w-auto">
 											{submitError || 'Failed to send message. Please try again.'}

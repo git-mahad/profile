@@ -149,9 +149,8 @@ export default function About() {
             <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-center sm:text-left">Milestones</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-4">
             <MilestoneItem end={41} text="REST APIs" showPlus={true} />
+            <MilestoneItem end={10} text="MERN" showPlus/>
               <MilestoneItem end={6} text="React Projects" />
-              <MilestoneItem end={2} text="Java Projects" />
-              <MilestoneItem end={10} text="MERN" showPlus/>
               <MilestoneItem end={5} text="Node/Nest" showPlus/>
               <MilestoneItem end={12} text="C++" showPlus={true} />
               <MilestoneItem end={2} text="Java" />
