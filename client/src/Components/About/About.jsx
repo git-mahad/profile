@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import P6image from '../../assets/About.jpeg';
 
 const MilestoneItem = ({ end, text, showPlus = false }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0) ;
 
   useEffect(() => {
     const duration = 2000;
     const increment = end / (duration / 16);
-    let start = 0;
+    let start = 0 ;
 
     const timer = setInterval(() => {
       start += increment;
